@@ -6,11 +6,23 @@
 /*   By: svalchuk <svalchuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:26:01 by svalchuk          #+#    #+#             */
-/*   Updated: 2023/11/18 15:34:15 by svalchuk         ###   ########.fr       */
+/*   Updated: 2023/11/22 13:36:34 by svalchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// size_t	ft_strlen(const char *str)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

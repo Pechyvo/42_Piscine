@@ -6,11 +6,41 @@
 /*   By: svalchuk <svalchuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 14:22:22 by svalchuk          #+#    #+#             */
-/*   Updated: 2023/11/18 16:33:00 by svalchuk         ###   ########.fr       */
+/*   Updated: 2023/11/22 13:35:07 by svalchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// size_t	ft_strlen(const char *str)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
+
+// char	*ft_strdup(const char *s1)
+// {
+// 	char	*dst;
+// 	int		i;
+
+// 	dst = malloc(ft_strlen(s1) + 1 * sizeof(char));
+// 	if (dst == NULL)
+// 		return (NULL);
+// 	i = 0;
+// 	while (s1[i])
+// 	{
+// 		dst[i] = s1[i];
+// 		i++;
+// 	}
+// 	dst[i] = '\0';
+// 	return (dst);
+// }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

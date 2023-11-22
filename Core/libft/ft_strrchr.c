@@ -6,11 +6,23 @@
 /*   By: svalchuk <svalchuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:04:47 by svalchuk          #+#    #+#             */
-/*   Updated: 2023/11/18 15:34:10 by svalchuk         ###   ########.fr       */
+/*   Updated: 2023/11/22 13:36:27 by svalchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// size_t	ft_strlen(const char *str)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
 
 char	*ft_strrchr(const char *s, int c)
 {

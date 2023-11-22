@@ -6,11 +6,75 @@
 /*   By: svalchuk <svalchuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:02:57 by svalchuk          #+#    #+#             */
-/*   Updated: 2023/11/18 17:00:08 by svalchuk         ###   ########.fr       */
+/*   Updated: 2023/11/22 13:36:11 by svalchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// size_t	ft_strlen(const char *str)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
+
+// char	*ft_strchr(const char *s, int c)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (s[i])
+// 	{
+// 		if (s[i] == (char)c)
+// 			return (&((char *)s)[i]);
+// 		i++;
+// 	}
+// 	if (s[i] == (char)c)
+// 		return (&((char *)s)[i]);
+// 	else
+// 		return (NULL);
+// }
+
+// char	*ft_strdup(const char *s1)
+// {
+// 	char	*dst;
+// 	int		i;
+
+// 	dst = malloc(ft_strlen(s1) + 1 * sizeof(char));
+// 	if (dst == NULL)
+// 		return (NULL);
+// 	i = 0;
+// 	while (s1[i])
+// 	{
+// 		dst[i] = s1[i];
+// 		i++;
+// 	}
+// 	dst[i] = '\0';
+// 	return (dst);
+// }
+
+// size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	if (dstsize != 0)
+// 	{
+// 		while (src[i] && i < (dstsize - 1))
+// 		{
+// 			dst[i] = src[i];
+// 			i++;
+// 		}
+// 		dst[i] = '\0';
+// 	}
+// 	return (ft_strlen(src));
+// }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

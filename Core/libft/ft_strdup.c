@@ -6,11 +6,23 @@
 /*   By: svalchuk <svalchuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:25:51 by svalchuk          #+#    #+#             */
-/*   Updated: 2023/11/18 15:33:46 by svalchuk         ###   ########.fr       */
+/*   Updated: 2023/11/22 13:37:03 by svalchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// size_t	ft_strlen(const char *str)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
 
 char	*ft_strdup(const char *s1)
 {
