@@ -6,7 +6,7 @@
 /*   By: svalchuk <svalchuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:49:40 by svalchuk          #+#    #+#             */
-/*   Updated: 2023/11/23 14:35:50 by svalchuk         ###   ########.fr       */
+/*   Updated: 2023/11/27 21:05:07 by svalchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ char	**ft_split(char const *s, char c)
 
 	list = (char **)malloc((ft_wordcount(s, c) + 1) * sizeof(char *));
 	if (list == NULL || s == NULL)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (*s)
 	{
@@ -136,7 +136,7 @@ char	**ft_split(char const *s, char c)
 // #include <stdlib.h>
 // #include <string.h>
 // int main() {
-//     const char str[] = "Hello, World! Welcome to the GPT-3";
+//     const char str[] = "hello!";
 //     char separator = ' ';
 
 //     // Using your custom ft_split function
