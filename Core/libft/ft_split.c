@@ -6,7 +6,7 @@
 /*   By: svalchuk <svalchuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:49:40 by svalchuk          #+#    #+#             */
-/*   Updated: 2023/11/29 18:20:46 by svalchuk         ###   ########.fr       */
+/*   Updated: 2023/11/29 19:22:09 by svalchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,24 @@
 // 	return (i);
 // }
 
+// char	*ft_strdup(const char *s1)
+// {
+// 	char	*dst;
+// 	int		i;
+
+// 	dst = malloc(ft_strlen(s1) + 1 * sizeof(char));
+// 	if (dst == NULL)
+// 		return (NULL);
+// 	i = 0;
+// 	while (s1[i])
+// 	{
+// 		dst[i] = s1[i];
+// 		i++;
+// 	}
+// 	dst[i] = '\0';
+// 	return (dst);
+// }
+
 // char	*ft_substr(char const *s, unsigned int start, size_t len)
 // {
 // 	size_t	i;
@@ -63,24 +81,6 @@
 // 	}
 // 	str[i] = '\0';
 // 	return (str);
-// }
-
-// char	*ft_strdup(const char *s1)
-// {
-// 	char	*dst;
-// 	int		i;
-
-// 	dst = malloc(ft_strlen(s1) + 1 * sizeof(char));
-// 	if (dst == NULL)
-// 		return (NULL);
-// 	i = 0;
-// 	while (s1[i])
-// 	{
-// 		dst[i] = s1[i];
-// 		i++;
-// 	}
-// 	dst[i] = '\0';
-// 	return (dst);
 // }
 
 static size_t	ft_wordcount(char const *s, char c)
@@ -118,16 +118,13 @@ static char	**ft_freemem(char **list)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_split_2(char const *s, char c, char **list)
 {
 	int		i;
-	char	**list;
 	size_t	len;
 
-	list = (char **)malloc((ft_wordcount(s, c) + 1) * sizeof(char *));
-	if (list == NULL || s == NULL)
-		return (NULL);
 	i = 0;
+	len = 0;
 	while (*s)
 	{
 		while (*s == c && *s)
@@ -145,6 +142,17 @@ char	**ft_split(char const *s, char c)
 		}
 	}
 	list[i] = NULL;
+	return (list);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**list;
+
+	list = (char **)malloc((ft_wordcount(s, c) + 1) * sizeof(char *));
+	if (list == NULL || s == NULL)
+		return (NULL);
+	list = ft_split_2(s, c, list);
 	return (list);
 }
 
@@ -170,7 +178,7 @@ char	**ft_split(char const *s, char c)
 //     char **result_std = (char **)malloc((word_count + 1) * sizeof(char *));
 
 //     if (result_std == NULL) {
-//         return 1; // Return an error code
+//         return (1); // Return an error code
 //     }
 
 //     const char *start = str;
@@ -201,5 +209,5 @@ char	**ft_split(char const *s, char c)
 //     }
 //     free(result_std); // Free the array of strings
 
-//     return 0;
+//     return (0);
 // }
