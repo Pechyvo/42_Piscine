@@ -6,7 +6,7 @@
 /*   By: svalchuk <svalchuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:49:40 by svalchuk          #+#    #+#             */
-/*   Updated: 2023/11/27 21:05:07 by svalchuk         ###   ########.fr       */
+/*   Updated: 2023/11/29 18:20:46 by svalchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,20 @@ static size_t	ft_wordcount(char const *s, char c)
 	return (count);
 }
 
+static char	**ft_freemem(char **list)
+{
+	int	i;
+
+	i = 0;
+	while (list[i])
+	{
+		free(list[i]);
+		i++;
+	}
+	free(list);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -124,7 +138,9 @@ char	**ft_split(char const *s, char c)
 				len = ft_strlen(s);
 			else
 				len = ft_strchr(s, c) - s;
-			list[i++] = ft_substr(s, 0, len);
+			list[i] = ft_substr(s, 0, len);
+			if (list[i++] == NULL)
+				return (ft_freemem(list));
 			s += len;
 		}
 	}
