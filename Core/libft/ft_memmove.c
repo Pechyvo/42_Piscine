@@ -6,7 +6,7 @@
 /*   By: svalchuk <svalchuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:56:35 by svalchuk          #+#    #+#             */
-/*   Updated: 2023/11/16 14:36:42 by svalchuk         ###   ########.fr       */
+/*   Updated: 2023/12/01 16:58:44 by svalchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 
-	if (!dst && !src)
+	if (dst == NULL && src == NULL)
 		return (0);
 	i = 0;
 	if (src < dst)
