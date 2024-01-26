@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svalchuk <svalchuk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 10:41:21 by svalchuk          #+#    #+#             */
-/*   Updated: 2024/01/26 03:56:11 by svalchuk         ###   ########.fr       */
+/*   Updated: 2024/01/26 04:24:20 by svalchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_read(int fd, int *i)
 {
@@ -78,7 +78,7 @@ char	*ft_check(char **rem, int fd, int *i)
 
 char	*get_next_line(int fd)
 {
-	static char	*rem;
+	static char	*rem[1024];
 	char		*line;
 	int			i;
 
@@ -86,14 +86,14 @@ char	*get_next_line(int fd)
 	line = NULL;
 	if (fd < 0)
 		return (NULL);
-	if (rem == NULL)
-		rem = ft_read(fd, &i);
-	if (rem)
-		line = ft_check(&rem, fd, &i);
+	if (rem[fd] == NULL)
+		rem[fd] = ft_read(fd, &i);
+	if (rem[fd])
+		line = ft_check(&rem[fd], fd, &i);
 	if (line == NULL)
 	{
-		free(rem);
-		rem = NULL;
+		free(rem[fd]);
+		rem[fd] = NULL;
 	}
 	return (line);
 }
